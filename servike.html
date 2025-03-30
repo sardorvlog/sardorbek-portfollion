@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sobirjonov Sardorbek">
+    <meta name="description" content="Sobirjonov Sardorbek tomonidan yaratilgan veb-sahifa.">
+    <meta name="keywords" content="Sobirjonov Sardorbek, veb-dasturlash, tailwind css,  JavaScript">
+    <title>Sobirjonov Sardorbek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .service-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            background: linear-gradient(135deg, #ffffff, #f3f4f6);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .dark-mode .service-card {
+            background: linear-gradient(135deg, #1e1e1e, #333);
+        }
+        nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+        .dark-mode nav {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        nav a {
+            position: relative;
+            padding-bottom: 5px;
+            font-size: 18px;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            background: blue;
+            border-radius: 10px;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease-in-out;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: auto;
+        }
+        .button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: blue;
+            color: white;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .button:hover {
+            transform: scale(1.1);
+            background: darkblue;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .section-title {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #007cf0, #00dfd8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="transition-all duration-500">
+    <nav class="fixed top-0 w-full shadow-md flex items-center">
+        <div class="logo">MR PROGRAMMER</div>
+        <div class="nav-links">
+            <a href="index .html" class="hover:text-blue-500">Home</a>
+            <a href="aboute.html" class="hover:text-blue-500">About</a>
+            <a href="mywork.html" class="hover:text-blue-500">My work</a>
+            <a href="servike.html" class="hover:text-blue-500">Services</a>
+            <a href="contact.html" class="hover:text-blue-500">Contact</a>
+        </div>
+        <button id="toggle-mode" class="button">O'zgartirish</button>
+    </nav>
+    
+    <div class="flex flex-col items-center justify-center min-h-screen text-center p-8">
+        <h2 class="section-title">Bizning Xizmatlar</h2>
+        <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-lg">
+            Sizga kerak bo'lgan eng yaxshi xizmatlarni taqdim etamiz!
+        </p>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="service-card">💻 Web Dasturlash</div>
+            <div class="service-card">📱 Mobil Dasturlar</div>
+            <div class="service-card">🤖 Telegram Botlar</div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('toggle-mode').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>

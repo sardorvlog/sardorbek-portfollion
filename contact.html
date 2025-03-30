@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sobirjonov Sardorbek">
+    <meta name="description" content="Sobirjonov Sardorbek tomonidan yaratilgan veb-sahifa.">
+    <meta name="keywords" content="Sobirjonov Sardorbek, veb-dasturlash, tailwind css,  JavaScript">
+    <title>Sobirjonov Sardorbek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function animateIcons() {
+            document.querySelectorAll('.icon').forEach(icon => {
+                icon.classList.add('animate-bounce');
+                setTimeout(() => icon.classList.remove('animate-bounce'), 1000);
+            });
+        }
+    </script>
+    <style>
+        .icon:hover {
+            background-color: #1da1f2; /* Telegram rangiga o'xshash */
+        }
+        .icon img {
+            transition: filter 0.3s ease-in-out;
+        }
+        .icon:hover img {
+            filter: invert(1); /* Rangi o'zgarishi uchun */
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div class="w-full max-w-4xl bg-white shadow-lg rounded-2xl overflow-hidden flex flex-col md:flex-row">
+        <!-- Forma qismi -->
+        <div class="w-full md:w-1/2 p-6">
+            <h2 class="text-2xl font-bold mb-4">Biz bilan bog‘laning</h2>
+            <input type="text" placeholder="Ismingiz" class="w-full mb-3 p-2 border rounded-lg focus:ring focus:ring-blue-300">
+            <input type="email" placeholder="Email" class="w-full mb-3 p-2 border rounded-lg focus:ring focus:ring-blue-300">
+            <input type="text" placeholder="Telefon raqam" class="w-full mb-3 p-2 border rounded-lg focus:ring focus:ring-blue-300">
+            <textarea placeholder="Xabar" class="w-full mb-3 p-2 border rounded-lg focus:ring focus:ring-blue-300"></textarea>
+            <button class="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all">Yuborish</button>
+        </div>
+        
+        <!-- Ma'lumot qismi -->
+        <div class="w-full md:w-1/2 bg-blue-600 text-white p-6 flex flex-col justify-center items-center">
+            <h2 class="text-2xl font-bold mb-4">Kontakt Ma'lumotlari</h2>
+            <p class="mb-2"><strong>Manzil:</strong> Andijon, Asaka</p>
+            <p class="mb-2"><strong>Telefon:</strong> +998 94 089 81 19</p>
+            <p class="mb-4"><strong>Email:</strong> sardorbeksobirjonov308@gmail.com</p>
+            
+            <!-- Ijtimoiy tarmoqlar ikonkalari -->
+            <div class="flex space-x-4 mt-4">
+                <div class="icon bg-white p-2 rounded-full cursor-pointer hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/ios-filled/50/facebook.png" width="30" />
+                </div>
+                <div class="icon bg-white p-2 rounded-full cursor-pointer hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/ios-filled/50/telegram.png" width="30" />
+                </div>
+                <div class="icon bg-white p-2 rounded-full cursor-pointer hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/ios-filled/50/twitter.png" width="30" />
+                </div>
+                <div class="icon bg-white p-2 rounded-full cursor-pointer hover:scale-110 transition-transform">
+                    <img src="https://img.icons8.com/ios-filled/50/linkedin.png" width="30" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Futer qismi -->
+    <footer class="mt-6 text-center text-gray-600">
+        <p>&copy; 2025 Sardor tomonidan yaratildi.</p>
+    </footer>
+</body>
+</html>
